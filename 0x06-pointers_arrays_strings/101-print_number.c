@@ -1,45 +1,51 @@
-#include <stdio.h>
+#include "main.h"
 
+/**
+ *
+ *  *print_number - prints an integer.
+ *
+ *   *only using the putchar function.
+ *
+ *    *noarrays and pointers.
+ *
+ *     *@n: integer to be printed.
+ *
+ *      *
+ *
+ *       *Return: void.
+ *
+ *        */
 
-
-int main(void)
+void print_number(int n)
 
 {
 
-	  int n;
+		unsigned int num;
 
-	    int a[5];
+		/*check if number is negative*/
 
-	      int *p;
+			num = n;
 
+				if (n < 0)
 
+						{
 
-	        a[2] = 1024;
+									_putchar(45);
 
-		  p = &n;
+											num = -n;
 
-		    /*
-		     *
-		     *    * write your line of code here...
-		     *
-		     *       * Remember:
-		     *
-		     *          * - you are not allowed to use a
-		     *
-		     *             * - you are not allowed to modify p
-		     *
-		     *                * - only one statement
-		     *
-		     *                   * - you are not allowed to code anything else than this line of code
-		     *
-		     *                      */
+												}
 
-		    *(p + 5) = 98;
+				/* print number by recursion*/
 
-		      /* ...so that this prints 98\n */
+					if (num / 10)
 
-		      printf("a[2] = %d\n", a[2]);
+							{
 
-		        return (0);
+										print_number(num / 10);
+
+											}
+
+						_putchar((num % 10) + '0');
 
 }
